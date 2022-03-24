@@ -11,3 +11,4 @@ if object_id('@synthea_schema.organizations', 'U')    is not null drop table @sy
 if object_id('@synthea_schema.patients', 'U')         is not null drop table @synthea_schema.patients;
 if object_id('@synthea_schema.procedures', 'U')       is not null drop table @synthea_schema.procedures;
 if object_id('@synthea_schema.providers', 'U')        is not null drop table @synthea_schema.providers;
+if object_id('@synthea_schema.devices', 'U')        is not null drop table @synthea_schema.devices;

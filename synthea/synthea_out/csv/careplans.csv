@@ -1,0 +1,24 @@
+Id,START,STOP,PATIENT,ENCOUNTER,CODE,DESCRIPTION,REASONCODE,REASONDESCRIPTION
+b8fb9bd2-a0c4-f2cc-3864-5a77aba5170d,2012-09-03,2013-12-16,8c66bd81-9588-69bd-6f39-5acc8242bfac,68f63225-d9ea-23ca-4c95-bda035086d1b,53950000,Respiratory therapy,10509002,Acute bronchitis (disorder)
+00d5910d-bcad-4e6a-dac1-11ccb6ac8dc6,2014-02-05,2014-03-08,8c66bd81-9588-69bd-6f39-5acc8242bfac,fcd24811-4ad4-d5d3-02a7-d4cd861620bf,276239002,Therapy (regime/therapy),,
+01d153bd-be65-7bc4-6e1e-0d117474aec0,2014-03-20,,e6b6627f-4e38-dfc8-078c-11406151c521,5e86d451-9643-f480-3658-8ecb7f7f3036,276239002,Therapy (regime/therapy),,
+53c74bfa-980d-bc61-db40-4b19831698d2,2019-04-22,2019-12-30,8c66bd81-9588-69bd-6f39-5acc8242bfac,9bd638a7-0f6b-bdaf-89cb-a6378cebac6f,53950000,Respiratory therapy,10509002,Acute bronchitis (disorder)
+6e940d65-c04d-3f16-76e3-ebf066c43fee,2019-12-30,,8c66bd81-9588-69bd-6f39-5acc8242bfac,9089194d-f16c-fe90-3bfd-8752e68f47f4,698360004,Diabetes self management plan,15777000,Prediabetes
+80ec2302-baf9-27d0-95a4-c388272b4959,2020-03-11,2020-03-11,8c66bd81-9588-69bd-6f39-5acc8242bfac,70ff849d-d0df-daee-6f90-1c7bf6e06522,736376001,Infectious disease care plan (record artifact),840544004,Suspected COVID-19
+7ae3ae03-63c3-4a69-9efe-f9ed30f61595,2020-03-11,2020-04-03,8c66bd81-9588-69bd-6f39-5acc8242bfac,70ff849d-d0df-daee-6f90-1c7bf6e06522,736376001,Infectious disease care plan (record artifact),840539006,COVID-19
+c4e452c2-4f48-5557-5ba6-327e0fa3abb5,2020-03-16,2020-03-16,e6b6627f-4e38-dfc8-078c-11406151c521,0c75eb9b-8b5a-6b89-a39d-17b72a32504b,736376001,Infectious disease care plan (record artifact),840544004,Suspected COVID-19
+c7071ef7-41d8-6d95-7eef-3844bd79675f,2020-03-16,2020-04-22,e6b6627f-4e38-dfc8-078c-11406151c521,0c75eb9b-8b5a-6b89-a39d-17b72a32504b,736376001,Infectious disease care plan (record artifact),840539006,COVID-19
+8348a708-4463-85a6-cdd9-3a62fb927556,2012-06-06,2012-07-15,d90c07cc-e303-298a-6d28-fbac7ff3f282,42eab8ef-9727-9aec-1cae-d6b3b770dbad,133901003,Burn care,403191005,Second degree burn
+9369dd0b-fb58-8593-e455-ac7aea0997f4,2018-08-04,2019-03-09,d90c07cc-e303-298a-6d28-fbac7ff3f282,77e8cddc-c396-d2f8-d319-3548bc301402,134435003,Routine antenatal care,72892002,Normal pregnancy
+2f388fae-a9ae-3c1d-3144-3fe7eaa1d0b6,2019-05-05,2019-05-21,d90c07cc-e303-298a-6d28-fbac7ff3f282,1abd2557-60f7-9b59-57a0-dad0633065ec,737471002,Minor surgery care management (procedure),,
+f20e8987-6a28-2acc-1a4b-71ab2433165a,2019-08-06,2019-10-28,d90c07cc-e303-298a-6d28-fbac7ff3f282,85a24e5a-0478-0e0e-2a7b-d4e055fb9d1b,47387005,Head injury rehabilitation,62106007,Concussion with no loss of consciousness
+f8240da5-03d9-a433-84cc-80eb2d0174d6,2020-02-10,2020-02-10,d90c07cc-e303-298a-6d28-fbac7ff3f282,eb41897d-a66e-9127-597c-b0252498033c,736376001,Infectious disease care plan (record artifact),840544004,Suspected COVID-19
+21563a13-fde4-7154-3936-fff6d4de05de,2020-02-10,2020-03-06,d90c07cc-e303-298a-6d28-fbac7ff3f282,eb41897d-a66e-9127-597c-b0252498033c,736376001,Infectious disease care plan (record artifact),840539006,COVID-19
+ffe34946-451d-e803-edb5-24d12a97a8b0,2021-08-11,,a0ebf5bf-0009-20af-bc00-04c256717664,2fc3da37-3f05-5ea9-77e7-7055463c0100,395082007,Cancer care plan,109838007,Overlapping malignant neoplasm of colon
+8be1423b-f98e-4013-d713-aea231f38a69,2021-08-23,2021-08-31,a0ebf5bf-0009-20af-bc00-04c256717664,ae30a96a-5cd2-cfa4-77ab-49c463e41c59,781831000000109,Major surgery care management,109838007,Overlapping malignant neoplasm of colon
+27bb59e5-ac4f-0a13-25ea-54d893d74787,1982-05-26,,61735069-d238-1e52-1fac-bfc49c4b6325,0f1c2fc4-8c73-2101-248b-b8cced795f2d,384758001,Self-care interventions (procedure),,
+9cb82467-0bbc-ad99-4788-62a98c8ced58,2006-04-03,,61735069-d238-1e52-1fac-bfc49c4b6325,0796470b-497f-52ae-152b-0b214a6b7bdf,698360004,Diabetes self management plan,15777000,Prediabetes
+44c50954-956a-1be2-4972-32b7acbe7d4b,2012-04-09,,61735069-d238-1e52-1fac-bfc49c4b6325,ed7f9e5c-5d34-2a59-94a2-bf0d5f2e57fc,443402002,Lifestyle education regarding hypertension,59621000,Hypertension
+22c06898-d43d-5aa9-b70a-1af4a22c80a8,2017-06-26,2017-09-01,61735069-d238-1e52-1fac-bfc49c4b6325,6da94a73-609f-a930-7462-3ea07970382c,385691007,Fracture care,65966004,Fracture of forearm
+b8d0f279-11f0-645a-1e19-6ccc4fea315c,2020-03-10,2020-03-10,61735069-d238-1e52-1fac-bfc49c4b6325,3b87da73-35db-3229-a1d3-f6d307c79c43,736376001,Infectious disease care plan (record artifact),840544004,Suspected COVID-19
+5309855d-da1b-ad3d-8f73-fcf56f2e9599,2020-03-10,2020-04-01,61735069-d238-1e52-1fac-bfc49c4b6325,3b87da73-35db-3229-a1d3-f6d307c79c43,736376001,Infectious disease care plan (record artifact),840539006,COVID-19

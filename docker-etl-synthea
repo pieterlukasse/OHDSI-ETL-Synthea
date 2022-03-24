@@ -22,13 +22,61 @@ cd <- DatabaseConnector::createConnectionDetails(
 )
 
 ETLSyntheaBuilder::DropEventTables(cd, env_vars$SYNTHEA_CDM_SCHEMA)
-ETLSyntheaBuilder::DropSyntheaTables(cd, env_vars$SYNTHEA_RAW_SCHEMA)
 ETLSyntheaBuilder::DropVocabViews(cd, env_vars$SYNTHEA_CDM_SCHEMA)
+ETLSyntheaBuilder::DropVocabTables(cd,env_vars$SYNTHEA_VOCAB_SCHEMA)
+ETLSyntheaBuilder::DropSyntheaTables(cd, env_vars$SYNTHEA_RAW_SCHEMA)
 ETLSyntheaBuilder::DropMapAndRollupTables(cd, env_vars$SYNTHEA_CDM_SCHEMA)
 ETLSyntheaBuilder::CreateEventTables(cd, env_vars$SYNTHEA_CDM_SCHEMA)
 ETLSyntheaBuilder::CreateSyntheaTables(cd, env_vars$SYNTHEA_RAW_SCHEMA)
-ETLSyntheaBuilder::LoadSyntheaTables(cd, env_vars$SYNTHEA_RAW_SCHEMA, "/data/synthea/csv")
+ETLSyntheaBuilder::LoadSyntheaTables(cd, env_vars$SYNTHEA_RAW_SCHEMA, "/data/synthea/output/csv")
+ETLSyntheaBuilder::CreateVocabTables(cd,env_vars$SYNTHEA_VOCAB_SCHEMA)
 ETLSyntheaBuilder::CreateVocabViews(cd, env_vars$SYNTHEA_VOCAB_SCHEMA, env_vars$SYNTHEA_CDM_SCHEMA)
 ETLSyntheaBuilder::CreateVocabMapTables(cd, env_vars$SYNTHEA_CDM_SCHEMA)
+ETLSyntheaBuilder::LoadVocabFromCsv(cd,env_vars$SYNTHEA_VOCAB_SCHEMA, "/data/synthea/vocab_small")
+# disabled for now, since in vocab_small we get an error: ERROR: insert or update on table "concept_synonym" violates foreign key constraint "fpk_concept_synonym_language_concept_id"   Detail: Key (language_concept_id)=(4180186) is not present in table "concept". 
+# ETLSyntheaBuilder::CreateVocabConstraintsAndIndices(cd, env_vars$SYNTHEA_VOCAB_SCHEMA)
 ETLSyntheaBuilder::CreateVisitRollupTables(cd, env_vars$SYNTHEA_CDM_SCHEMA, env_vars$SYNTHEA_RAW_SCHEMA)
 ETLSyntheaBuilder::LoadEventTables(cd, env_vars$SYNTHEA_CDM_SCHEMA, env_vars$SYNTHEA_RAW_SCHEMA)
+
+
+# TODO - Potential better code, that also creates the SCHEMAs on the fly (for later):
+
+# vocabSchema <- env_vars$SYNTHEA_VOCAB_SCHEMA
+# pathToVocabCsv <- "/Users/maxim/Documents/OMOP data/OMOP Vocabulary/vocab_21_dec_2020"
+# sourceSchema <- "native"
+# cdmSchema <- "cdm_synthea"
+
+
+# # Vocabulary --------------------------------------------------------
+# conn <- DatabaseConnector::connect(cd)
+# DatabaseConnector::executeSql(conn, paste("CREATE SCHEMA", vocabSchema))
+# ETLSyntheaBuilder::DropVocabTables(cd,vocabSchema)
+# ETLSyntheaBuilder::CreateVocabTables(cd,vocabSchema)
+# ETLSyntheaBuilder::LoadVocabFromCsv(cd,vocabSchema,"/data/synthea/vocab_small")
+# ETLSyntheaBuilder::CreateVocabConstraintsAndIndices(cd, vocabSchema)
+
+# # Synthea source --------------------------------------------------------
+# DatabaseConnector::executeSql(conn, paste("CREATE SCHEMA", sourceSchema))
+# ETLSyntheaBuilder::DropSyntheaTables(cd, sourceSchema)
+# ETLSyntheaBuilder::CreateSyntheaTables(cd, sourceSchema)
+# ETLSyntheaBuilder::LoadSyntheaTables(cd, sourceSchema,"/data/synthea/output/csv")
+
+# ETLSyntheaBuilder::DropMapAndRollupTables(cd,cdmSchema)
+# ETLSyntheaBuilder::CreateVocabMapTables(cd,vocabSchema)
+
+# # Mapping to OMOP CDM ------------------------------------------------------
+# DatabaseConnector::executeSql(conn, paste("CREATE SCHEMA", cdmSchema))
+
+# # Prepare
+# ETLSyntheaBuilder::CreateVisitRollupTables(cd,cdmSchema,"native")
+# ETLSyntheaBuilder::DropVocabViews(cd, cdmSchema)
+# ETLSyntheaBuilder::CreateVocabViews(cd, vocabSchema, cdmSchema)
+
+# # create view cdm5.source_to_standard_vocab_map AS (SELECT * FROM vocab.source_to_standard_vocab_map);
+# # create view cdm5.source_to_source_vocab_map AS (select * from vocab.source_to_source_vocab_map);
+
+# ETLSyntheaBuilder::DropEventTables(cd,cdmSchema)
+# ETLSyntheaBuilder::CreateEventTables(cd,cdmSchema)
+# ETLSyntheaBuilder::LoadEventTables(cd,cdmSchema,"native")
+
+# DatabaseConnector::disconnect(conn)
